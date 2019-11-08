@@ -48,6 +48,9 @@
     <PackageReference Include="PostSharp.Patterns.Common">
       <Version>6.3.10</Version>
     </PackageReference>
+    <PackageReference Include="xunit">
+      <Version>2.4.1</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
