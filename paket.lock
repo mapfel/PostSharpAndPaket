@@ -1,14 +1,14 @@
 RESTRICTION: == net48
 NUGET
   remote: https://api.nuget.org/v3/index.json
-    PostSharp (6.3.10)
-      PostSharp.Redist (>= 6.3.10 < 7.0)
-    PostSharp.Patterns.Common (6.3.10)
-      PostSharp (>= 6.3.10 < 7.0)
-      PostSharp.Patterns.Common.Redist (>= 6.3.10 < 7.0)
-    PostSharp.Patterns.Common.Redist (6.3.10)
-      PostSharp.Redist (>= 6.3.10 < 7.0)
-    PostSharp.Redist (6.3.10)
+    PostSharp (5.0.55)
+      PostSharp.Redist (>= 5.0.55 < 6.0)
+    PostSharp.Patterns.Common (5.0.55)
+      PostSharp (>= 5.0.55 < 6.0)
+      PostSharp.Patterns.Common.Redist (5.0.55)
+    PostSharp.Patterns.Common.Redist (5.0.55)
+      PostSharp.Redist (>= 5.0.55 < 6.0)
+    PostSharp.Redist (5.0.55)
     xunit (2.4.1)
       xunit.analyzers (>= 0.10)
       xunit.assert (2.4.1)

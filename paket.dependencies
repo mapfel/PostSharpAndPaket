@@ -2,6 +2,6 @@ framework: net48
 
 source https://api.nuget.org/v3/index.json
 
-nuget PostSharp.Patterns.Common 6.3.10
+nuget PostSharp.Patterns.Common 5.0.55
 nuget xunit 2.4.1
 nuget xunit.runner.console
