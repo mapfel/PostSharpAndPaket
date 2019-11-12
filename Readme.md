@@ -1,5 +1,19 @@
 # Details about the issue with PostSharp and Paket
 
+## Table of Contents
+
+- [Prerequisites](#Prerequisites)  
+  initial steps to prepare a demo project for this issue
+
+- [Problem](#Problem)  
+  describes the issue in detail
+
+- [Conclusion](#Conclusion)  
+  summary of the issue and conjecture of the root cause
+
+- [Workarounds and tracking the solving efforts](#Workarounds-and-tracking-the-solving-efforts)  
+  audits the solutions hints and efforts to solve the issue
+
 ## Prerequisites
 
 1. Create a new project with an empty class named `ClassUsingPostSharp`
@@ -60,3 +74,53 @@
 - The same issue a co-worker and the CI server will have.
 
 > Who can help?
+
+## Workarounds and tracking the solving efforts
+
+### Easier access to build and run
+
+#### Build via CLI
+
+- open a **Developer Command Prompt for Visual Studio**
+
+- navigate to project root folder
+
+- run build with msbuild
+
+  ```prompt
+  .\src\PostSharpAndPaket\PostSharpAndPaket.sln
+  ```
+
+#### xUnit Console Runner
+
+- with commit `56444b` ("add xUnit console runner") the **xUnit** Console Runner was included
+
+- so from root we can now run the unit tests via
+
+  ```prompt
+  .\packages\xunit.runner.console\tools\net472\xunit.console.exe .\src\PostSharpAndPaket\bin\Debug\PostSharpAndPaket.dll
+  ```
+
+#### Paket commands
+
+- (re-) install packages after changing `paket.dependencies` file
+
+  ```prompt
+  .paket\paket.exe install
+  ```
+
+- restoring `package` folder after cleanup DevTree or switching branches
+
+  ```prompt
+  .paket\paket.exe restore
+  ```
+
+### Hint from Daniel Balas ([comment: 103888639_58799413](https://stackoverflow.com/questions/58799413/using-postsharp-and-paket-together-ignores-under-some-circumstances-the-weaving#comment103888639_58799413))
+
+- **Paket** throws the warning `Could not detect any platforms from 'unzipper' in '...\packages\PostSharp\build\unzipper\SharpCompress.dll', please tell the package authors`  
+
+- to check which versions of **PostSharp** have this issue the branch `dev/play-with-postsharp-versions` was created (also pushed to remote here)
+
+- indeed the version `5.0.55` doesn't throw this warning
+
+- all later versions (the 6er line) have that issue
