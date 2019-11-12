@@ -79,16 +79,14 @@
 
 ### Easier access to build and run
 
+> Hint: for all commands below open a **Developer Command Prompt for Visual Studio** and navigate to the project root folder
+
 #### Build via CLI
 
-- open a **Developer Command Prompt for Visual Studio**
-
-- navigate to project root folder
-
-- run build with msbuild
+- run build with
 
   ```prompt
-  .\src\PostSharpAndPaket\PostSharpAndPaket.sln
+  msbuild .\src\PostSharpAndPaket\PostSharpAndPaket.sln
   ```
 
 #### xUnit Console Runner
